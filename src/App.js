@@ -2,6 +2,7 @@ import "./App.css";
 import { DataProvider } from "./context/DataContext";
 import DataFetcher from "./components/DataFetcher";
 import Table from "./components/Table";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <h1>Nesine</h1>
       <DataFetcher />
       <Table />
+      <Cart />
     </DataProvider>
   );
 }

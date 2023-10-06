@@ -26,9 +26,7 @@ const Table = () => {
       setIsClicked(true);
     }
   };
-  useEffect(() => {
-    console.log(cartItems, "cart state list");
-  }, [cartItems]);
+  useEffect(() => {}, [cartItems]);
 
   if (loader) return <h1>Loading...</h1>;
   if (error) return <h3>Error Message : {Error}</h3>;
@@ -97,6 +95,7 @@ const Table = () => {
                       id: `${ticket.C}${ticket.OCG[1].OC[0].O}${i}`,
                       itemValue: ticket.OCG[1].OC[0].O,
                       rowId: i,
+                      parentObject: ticket,
                     })
                   }
                   style={{
@@ -116,6 +115,7 @@ const Table = () => {
                       id: `${ticket.C}${ticket.OCG[1].OC[1].O}${i}${i}`,
                       itemValue: ticket.OCG[1].OC[1].O,
                       rowId: i,
+                      parentObject: ticket,
                     })
                   }
                   style={{
@@ -137,6 +137,7 @@ const Table = () => {
                       id: `${ticket.C}${ticket.OCG[5].OC[25].O}${i}${i}${i}`,
                       itemValue: ticket.OCG[5].OC[25].O,
                       rowId: i,
+                      parentObject: ticket,
                     })
                   }
                   style={{
@@ -158,6 +159,7 @@ const Table = () => {
                       id: `${ticket.C}${ticket.OCG[5].OC[26].O}${i}${i}${i}${i}`,
                       itemValue: ticket.OCG[5].OC[26].O,
                       rowId: i,
+                      parentObject: ticket,
                     })
                   }
                   style={{
