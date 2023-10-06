@@ -4,8 +4,7 @@
 table {
   width: 100%;
 }
-thead tr {
-}
+
 table,
 th,
 td {
@@ -41,4 +40,10 @@ td {
   display: flex;
   justify-content: flex-start;
   gap: 12px;
+}
+.boldText {
+  font-weight: 700;
+}
+.largeText {
+  font-size: 20px;
 }
