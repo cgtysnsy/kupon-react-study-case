@@ -6,4 +6,6 @@ table,
 th,
 td {
   border: 1px solid;
+  min-width: 30px;
+  cursor: pointer;
 }

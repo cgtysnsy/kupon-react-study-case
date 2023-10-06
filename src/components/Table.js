@@ -1,13 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "../context/DataContext";
 
 const Table = () => {
-  const { tickets, loader, error } = useContext(DataContext);
+  const { tickets, loader, error, cartItems, setCartItems, setIsClicked } =
+    useContext(DataContext);
+
+  const handleCellClick = (object) => {
+    const isSelected = cartItems.some((o) => o.id === object.id);
+    const existingIndex = cartItems.findIndex(
+      (obj) => obj.rowId === object.rowId
+    );
+    if (isSelected) {
+      // Remove the object from the selectedObjects state
+      setCartItems((prevSelected) =>
+        prevSelected.filter((o) => o.id !== object.id)
+      );
+      setIsClicked(false);
+    } else if (existingIndex !== -1) {
+      const newItemsArray = [...cartItems];
+      newItemsArray[existingIndex] = object;
+      setCartItems(newItemsArray);
+    } else {
+      // Add the object to the selectedObjects state
+      setCartItems((prevSelected) => [...prevSelected, object]);
+      setIsClicked(true);
+    }
+  };
+  useEffect(() => {
+    console.log(cartItems, "cart state list");
+  }, [cartItems]);
 
   if (loader) return <h1>Loading...</h1>;
   if (error) return <h3>Error Message : {Error}</h3>;
   return (
-    <div className="App">
+    <div>
       <table>
         <thead>
           <tr>
@@ -64,21 +90,98 @@ const Table = () => {
                 </td>
                 <td>Yorumlar</td>
                 <td>{ticket.OCG[1].MBS}</td>
-                <td>{ticket.OCG[1].OC[0].O}</td>
-                <td>{ticket.OCG[1].OC[1].O}</td>
-                <td>BLANK</td>
-                <td>{ticket.OCG[5].OC[25].O}</td>
-                <td>{ticket.OCG[5].OC[26].O}</td>
-                <td>BLANK</td>
-                <td>BLANK</td>
-                <td>BLANK</td>
-                <td>BLANK</td>
-                <td>BLANK</td>
+                <td
+                  key={`${ticket.C}${ticket.OCG[1].OC[0].O}${i}`}
+                  onClick={() =>
+                    handleCellClick({
+                      id: `${ticket.C}${ticket.OCG[1].OC[0].O}${i}`,
+                      itemValue: ticket.OCG[1].OC[0].O,
+                      rowId: i,
+                    })
+                  }
+                  style={{
+                    backgroundColor: cartItems.some(
+                      (o) => o.id === `${ticket.C}${ticket.OCG[1].OC[0].O}${i}`
+                    )
+                      ? "yellow"
+                      : "white",
+                  }}
+                >
+                  {ticket.OCG[1].OC[0].O}
+                </td>
+                <td
+                  key={`${ticket.C}${ticket.OCG[1].OC[1].O}${i}${i}`}
+                  onClick={() =>
+                    handleCellClick({
+                      id: `${ticket.C}${ticket.OCG[1].OC[1].O}${i}${i}`,
+                      itemValue: ticket.OCG[1].OC[1].O,
+                      rowId: i,
+                    })
+                  }
+                  style={{
+                    backgroundColor: cartItems.some(
+                      (o) =>
+                        o.id === `${ticket.C}${ticket.OCG[1].OC[1].O}${i}${i}`
+                    )
+                      ? "yellow"
+                      : "white",
+                  }}
+                >
+                  {ticket.OCG[1].OC[1].O}
+                </td>
+                <td></td>
+                <td
+                  key={`${ticket.C}${ticket.OCG[5].OC[25].O}${i}${i}${i}`}
+                  onClick={() =>
+                    handleCellClick({
+                      id: `${ticket.C}${ticket.OCG[5].OC[25].O}${i}${i}${i}`,
+                      itemValue: ticket.OCG[5].OC[25].O,
+                      rowId: i,
+                    })
+                  }
+                  style={{
+                    backgroundColor: cartItems.some(
+                      (o) =>
+                        o.id ===
+                        `${ticket.C}${ticket.OCG[5].OC[25].O}${i}${i}${i}`
+                    )
+                      ? "yellow"
+                      : "white",
+                  }}
+                >
+                  {ticket.OCG[5].OC[25].O}
+                </td>
+                <td
+                  key={`${ticket.C}${ticket.OCG[5].OC[26].O}${i}${i}${i}${i}`}
+                  onClick={() =>
+                    handleCellClick({
+                      id: `${ticket.C}${ticket.OCG[5].OC[26].O}${i}${i}${i}${i}`,
+                      itemValue: ticket.OCG[5].OC[26].O,
+                      rowId: i,
+                    })
+                  }
+                  style={{
+                    backgroundColor: cartItems.some(
+                      (o) =>
+                        o.id ===
+                        `${ticket.C}${ticket.OCG[5].OC[26].O}${i}${i}${i}${i}`
+                    )
+                      ? "yellow"
+                      : "white",
+                  }}
+                >
+                  {ticket.OCG[5].OC[26].O}
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>{ticket.OCG[2].OC[3].O}</td>
                 <td>{ticket.OCG[2].OC[4].O}</td>
                 <td>{ticket.OCG[2].OC[5].O}</td>
-                <td>BLANK</td>
-                <td>BLANK</td>
+                <td></td>
+                <td></td>
                 <td>3</td>
               </tr>
             </tbody>
