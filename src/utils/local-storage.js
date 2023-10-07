@@ -27,9 +27,6 @@ export const saveBets = (bets) => {
   const HOUR = 3600 * 1000;
   const expiresAt = new Date(new Date().setTime(today.getTime() + 3 * HOUR));
 
-  console.log('today', today);
-  console.log('today', expiresAt);
-
   const data = {
     expiresAt: expiresAt,
     bets,

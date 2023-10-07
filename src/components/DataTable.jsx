@@ -12,14 +12,14 @@ const subColumns = {
   away: '2',
   alt: 'Alt',
   üst: 'Üst',
-  hone: 'H1',
-  secondone: '1',
-  secondx: 'X',
+  hOne: 'H1',
+  secondOne: '1',
+  secondX: 'X',
   secondtwo: '2',
-  htwo: 'H2',
-  onex: '1-X',
-  onetwo: '1-2',
-  twox: '2-X',
+  hTwo: 'H2',
+  oneX: '1-X',
+  oneTwo: '1-2',
+  twoX: '2-X',
   var: 'Var',
   yok: 'Yok',
   plusnumber: '+99',
@@ -64,9 +64,6 @@ const DataTable = () => {
     }
   };
 
-  if (loader) return <h1>Loading...</h1>;
-  if (error) return <h3>Error Message : {Error}</h3>;
-
   const getStyle = (cellId) => {
     return {
       backgroundColor: cartItems.some((o) => o.id === cellId)
@@ -75,6 +72,8 @@ const DataTable = () => {
     };
   };
 
+  if (loader) return <h1>Loading...</h1>;
+  if (error) return <h3>Error Message : {Error}</h3>;
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       <AutoSizer>
@@ -339,14 +338,14 @@ const DataTable = () => {
                 justifyContent: 'center',
               }}
               label='H1'
-              dataKey='hone'
+              dataKey='hOne'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
                 if (isSubHeader) {
                   return (
-                    <div className='custom-cell subheader'>{rowData.hone}</div>
+                    <div className='custom-cell subheader'>{rowData.hOne}</div>
                   );
                 }
               }}
@@ -358,8 +357,8 @@ const DataTable = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
-              label='H1'
-              dataKey='secondone'
+              label='1'
+              dataKey='secondOne'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
@@ -367,7 +366,7 @@ const DataTable = () => {
                 if (isSubHeader) {
                   return (
                     <div className='custom-cell subheader'>
-                      {rowData.secondone}
+                      {rowData.secondOne}
                     </div>
                   );
                 }
@@ -381,7 +380,7 @@ const DataTable = () => {
                 justifyContent: 'center',
               }}
               label='X'
-              dataKey='secondx'
+              dataKey='secondX'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
@@ -389,7 +388,7 @@ const DataTable = () => {
                 if (isSubHeader) {
                   return (
                     <div className='custom-cell subheader'>
-                      {rowData.secondx}
+                      {rowData.secondX}
                     </div>
                   );
                 }
@@ -425,14 +424,14 @@ const DataTable = () => {
                 justifyContent: 'center',
               }}
               label='H2'
-              dataKey='htwo'
+              dataKey='hTwo'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
                 if (isSubHeader) {
                   return (
-                    <div className='custom-cell subheader'>{rowData.htwo}</div>
+                    <div className='custom-cell subheader'>{rowData.hTwo}</div>
                   );
                 }
               }}
@@ -445,14 +444,14 @@ const DataTable = () => {
                 justifyContent: 'center',
               }}
               label='1-X'
-              dataKey='onex'
+              dataKey='oneX'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
                 if (isSubHeader) {
                   return (
-                    <div className='custom-cell subheader'>{rowData.onex}</div>
+                    <div className='custom-cell subheader'>{rowData.oneX}</div>
                   );
                 }
 
@@ -484,7 +483,7 @@ const DataTable = () => {
                 justifyContent: 'center',
               }}
               label='1-2'
-              dataKey='onetwo'
+              dataKey='oneTwo'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
@@ -492,7 +491,7 @@ const DataTable = () => {
                 if (isSubHeader) {
                   return (
                     <div className='custom-cell subheader'>
-                      {rowData.onetwo}
+                      {rowData.oneTwo}
                     </div>
                   );
                 }
@@ -525,14 +524,14 @@ const DataTable = () => {
                 justifyContent: 'center',
               }}
               label='2-X'
-              dataKey='twox'
+              dataKey='twoX'
               cellRenderer={(props) => {
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
                 if (isSubHeader) {
                   return (
-                    <div className='custom-cell subheader'>{rowData.twox}</div>
+                    <div className='custom-cell subheader'>{rowData.twoX}</div>
                   );
                 }
 

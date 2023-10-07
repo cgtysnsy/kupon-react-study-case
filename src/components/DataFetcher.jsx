@@ -18,7 +18,6 @@ const DataFetcher = () => {
       try {
         const response = await fetch(URL);
         const data = await response.json();
-
         setTickets(data);
         saveBets(data);
       } catch (error) {

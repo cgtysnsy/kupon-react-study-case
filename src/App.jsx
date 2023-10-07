@@ -8,7 +8,7 @@ import Cart from './components/Cart';
 function App() {
   return (
     <DataProvider>
-      <h1>Nesine</h1>
+      <h1>Nesine React Test Case</h1>
       <DataFetcher />
       <DataTable />
       <Cart />
