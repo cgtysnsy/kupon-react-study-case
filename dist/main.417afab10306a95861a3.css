@@ -1,0 +1,91 @@
+.ReactVirtualized__Table__headerRow {
+  background-color: #ccc;
+  text-align: center;
+}
+.ReactVirtualized__Table__headerColumn {
+  border-right: 1px solid black;
+}
+.ReactVirtualized__Table__headerTruncatedText {
+  padding: 12px 0;
+}
+
+.ReactVirtualized__Table__rowColumn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ReactVirtualized__Table__headerColumn,
+.ReactVirtualized__Table__rowColumn {
+  border-right: 1px solid black;
+  margin-right: 0 !important;
+  border-bottom: 1px solid black;
+}
+
+/* .tableWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.custom-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+}
+
+.subHeader {
+  color: #666;
+}
+
+.App {
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 0.5px solid;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+th,
+td {
+  max-width: 250px;
+  min-width: 45px;
+  width: auto;
+}
+.cartWrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 600px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.cartWrapper li {
+  padding: 10px 20px;
+  border-bottom: 1px solid grey;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.boldText {
+  font-weight: 700;
+}
+.largeText {
+  font-size: 20px;
+}
+
