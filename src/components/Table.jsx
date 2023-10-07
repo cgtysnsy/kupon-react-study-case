@@ -1,9 +1,55 @@
 import React, { useContext, useEffect } from "react";
 import { DataContext } from "../context/DataContext";
+//import { useVirtual, useVirtualizer } from "@tanstack/react-virtual";
 
 const Table = () => {
   const { tickets, loader, error, cartItems, setCartItems, setIsClicked } =
     useContext(DataContext);
+
+  // const [listToRender, setListToRender] = useState({ start: 0, end: 10 });
+  // const [elHeigt, setElHeight] = useState(0);
+  // const parentContainerRef = useRef(null);
+  // const gap = 1;
+  // const threshold = 2;
+
+  // useEffect(function () {
+  //   const timeout = setTimeout(function () {
+  //     const childElement = parentContainerRef.current;
+  //     console.log(childElement.offsetHeight);
+  //     const elHeight = childElement.offsetHeight + 2 * gap;
+  //     setElHeight(elHeight);
+  //     parentContainerRef.current?.setAttribute(
+  //       "style",
+  //       `height:${elHeight * tickets.length}px`
+  //     );
+  //     calcListToRender();
+  //     clearTimeout(timeout);
+  //   });
+  // }, []);
+
+  // const calcListToRender = function (e) {
+  //   const containerHeight =
+  //     parentContainerRef.current.parentElement.offsetHeight;
+  //   const scrollTop = parentContainerRef.current.parentElement.scrollTop;
+  //   const startIndex = Math.max(0, Math.floor(scrollTop / elHeigt) - threshold);
+  //   const endIndex = Math.min(
+  //     tickets.length - 1,
+  //     Math.ceil((scrollTop + containerHeight) / elHeigt + threshold)
+  //   );
+  //   setListToRender({
+  //     start: startIndex,
+  //     end: endIndex,
+  //   });
+  // };
+
+  // const parentElement = useRef(null);
+  // const count = tickets.length;
+
+  // const virtualizer = useVirtual({
+  //   count,
+  //   getScrollElement: () => (parentElement ? parentElement.current : null),
+  //   estimateSize: () => 22,
+  // });
 
   const handleCellClick = (object) => {
     const isSelected = cartItems.some((o) => o.id === object.id);
@@ -31,7 +77,10 @@ const Table = () => {
   if (loader) return <h1>Loading...</h1>;
   if (error) return <h3>Error Message : {Error}</h3>;
   return (
-    <div>
+    <div
+    // style={{ height: "100vh", width: "100%", overflowY: "auto" }}
+    // ref={parentElement}
+    >
       <table>
         <thead>
           <tr>

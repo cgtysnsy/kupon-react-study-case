@@ -1,3 +1,24 @@
+.ReactVirtualized__Table__headerRow {
+  border-bottom: 2px solid black;
+  padding-bottom: 4px;
+}
+
+.ReactVirtualized__Table__row {
+  border-bottom: 1px solid black;
+}
+
+.ReactVirtualized__Table__rowColumn {
+  border-right: 1px solid black;
+}
+
+/* // .custom-cell {
+//   text-align: center;
+// } */
+
+.subheader {
+  color: #666;
+}
+
 .App {
   text-align: center;
 }

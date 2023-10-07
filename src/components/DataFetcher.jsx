@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react";
-import { DataContext } from "../context/DataContext";
+import React, { useContext, useEffect } from 'react';
+import { DataContext } from '../context/DataContext';
 
 const DataFetcher = () => {
   const { setLoader, setTickets, setError } = useContext(DataContext);
-  const URL = "https://nesine-case-study.onrender.com/bets";
+  const URL = 'https://nesine-case-study.onrender.com/bets';
 
   useEffect(() => {
     const fetchTickets = async () => {

@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "parser": "@babel/eslint-parser",
+    "requireConfigFile": false, // <== ADD THIS
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      },
+      "alias": {
+        "map": [
+          ["@src", "./src"],
+          ["@assets", "./assets"]
+        ],
+        "extensions": [".js", ".jsx"]
+      }
+    },
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "react/prop-types": "off"
+  }
+}
