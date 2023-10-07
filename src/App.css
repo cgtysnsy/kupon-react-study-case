@@ -1,6 +1,12 @@
 .ReactVirtualized__Table__headerRow {
-  border-bottom: 2px solid black;
-  padding-bottom: 4px;
+  background-color: #ccc;
+  text-align: center;
+}
+.ReactVirtualized__Table__headerColumn {
+  border-right: 1px solid black;
+}
+.ReactVirtualized__Table__headerTruncatedText {
+  padding: 12px 0;
 }
 
 .ReactVirtualized__Table__row {
@@ -11,9 +17,14 @@
   border-right: 1px solid black;
 }
 
-/* // .custom-cell {
-//   text-align: center;
-// } */
+/* .tableWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.custom-cell {
+  text-align: center;
+}
 
 .subheader {
   color: #666;

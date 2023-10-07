@@ -76,20 +76,26 @@ const DataTable = () => {
   };
 
   return (
-    <div style={{ height: '400px', width: '100%' }}>
+    <div style={{ height: '100vh', width: '100%' }}>
       <AutoSizer>
         {({ width, height }) => (
           <Table
             width={width}
             height={height}
-            headerHeight={20}
+            headerHeight={40}
             rowHeight={30}
             rowCount={list.length}
             rowGetter={({ index }) => list[index]}
-            rowStyle={{ alignItems: 'stretch' }}
+            rowStyle={{
+              alignItems: 'stretch',
+            }}
+            className='tableWrapper'
           >
             <Column
-              style={{ display: 'flex', alignItems: 'center' }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
               width={300}
               label={`EVENT COUNTS ${tickets.length}`}
               dataKey='dateAndLeaguge'
@@ -123,7 +129,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={120}
               style={{ display: 'flex', alignItems: 'center' }}
               label='Yorumlar'
               dataKey='yorumlar'
@@ -152,7 +158,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -161,8 +167,6 @@ const DataTable = () => {
               label='1'
               dataKey='home'
               cellRenderer={(props) => {
-                console.log('cellProps', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -172,7 +176,6 @@ const DataTable = () => {
 
                 const cellId = `${rowData.NID}-1-0`;
                 const rowId = `${rowData.NID}`;
-                console.log('rowData', rowData);
                 return (
                   <div
                     className='custom-cell'
@@ -192,7 +195,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -201,8 +204,6 @@ const DataTable = () => {
               label='X'
               dataKey='x'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -233,7 +234,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -242,8 +243,6 @@ const DataTable = () => {
               label='2'
               dataKey='away'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -255,7 +254,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -264,8 +263,6 @@ const DataTable = () => {
               label='Alt'
               dataKey='alt'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -296,7 +293,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -305,8 +302,6 @@ const DataTable = () => {
               label='Üst'
               dataKey='üst'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -337,7 +332,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -346,8 +341,6 @@ const DataTable = () => {
               label='H1'
               dataKey='hone'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -359,7 +352,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -368,8 +361,6 @@ const DataTable = () => {
               label='H1'
               dataKey='secondone'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -383,7 +374,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -392,8 +383,6 @@ const DataTable = () => {
               label='X'
               dataKey='secondx'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -407,7 +396,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -416,8 +405,6 @@ const DataTable = () => {
               label='2'
               dataKey='secondtwo'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -431,7 +418,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -440,8 +427,6 @@ const DataTable = () => {
               label='H2'
               dataKey='htwo'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -453,7 +438,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -462,8 +447,6 @@ const DataTable = () => {
               label='1-X'
               dataKey='onex'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -494,7 +477,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -503,8 +486,6 @@ const DataTable = () => {
               label='1-2'
               dataKey='onetwo'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -537,7 +518,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -546,8 +527,6 @@ const DataTable = () => {
               label='2-X'
               dataKey='twox'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -578,7 +557,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -587,8 +566,6 @@ const DataTable = () => {
               label='Var'
               dataKey='var'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -600,7 +577,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -609,8 +586,6 @@ const DataTable = () => {
               label='Yok'
               dataKey='yok'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
@@ -622,7 +597,7 @@ const DataTable = () => {
               }}
             />
             <Column
-              width={100}
+              width={60}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -631,8 +606,6 @@ const DataTable = () => {
               label='+99'
               dataKey='plusnumber'
               cellRenderer={(props) => {
-                console.log('props', props);
-
                 const { rowData } = props;
                 const isSubHeader = props.rowIndex % 2 === 0;
 
